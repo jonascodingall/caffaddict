@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Scanner from '$lib/components/Scanner.svelte';
+    import Scanner from "$lib/components/Scanner.svelte";
 
     let lastScan = "";
     let showResult = false;
@@ -11,31 +11,22 @@
     }
 </script>
 
-<div class="max-w-md mx-auto p-4 space-y-6">
-    <h1 class="text-3xl font-black text-center text-slate-800 tracking-tight">
-        CaffAddict ⚡️
-    </h1>
-
+<div>
+    <h1>CaffAddict</h1>
     {#if showResult}
-        <div class="p-6 bg-emerald-50 border border-emerald-200 rounded-2xl text-center space-y-4 shadow-sm">
+        <div>
             <div>
-                <p class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Gefunden</p>
-                <p class="text-4xl font-mono font-black text-slate-800 mt-1">{lastScan}</p>
+                <p>Gefunden</p>
+                <p>
+                    {lastScan}
+                </p>
             </div>
-            <button 
-                class="w-full py-2 bg-white border border-slate-200 rounded-lg text-slate-600 font-medium hover:bg-slate-50"
-                on:click={() => showResult = false}
-            >
-                Weiter
-            </button>
+            <button on:click={() => (showResult = false)}> Weiter </button>
         </div>
     {:else}
-        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+        <div>
             <Scanner onResult={handleDetection} />
-            
-            <p class="text-xs text-center text-slate-400 mt-4">
-                Halte den Code quer ("Leiter") bei Spiegelungen.
-            </p>
+            <p>Halte den Code quer ("Leiter") bei Spiegelungen.</p>
         </div>
     {/if}
 </div>

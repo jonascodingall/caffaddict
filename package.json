@@ -41,6 +41,7 @@
 	},
 	"dependencies": {
 		"html5-qrcode": "^2.3.8",
-		"pocketbase": "^0.26.5"
+		"pocketbase": "^0.26.5",
+		"zod": "^4.3.4"
 	}
 }
