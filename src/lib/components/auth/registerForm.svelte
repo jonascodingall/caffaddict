@@ -7,14 +7,13 @@
         type Infer,
         superForm,
     } from "sveltekit-superforms";
-    import { zod4Client } from "sveltekit-superforms/adapters"; // Using modern zodClient
+    import { zod4Client } from "sveltekit-superforms/adapters";
 
-    // 1. Use Svelte 5 $props
     let {
         data,
     }: { data: { form: SuperValidated<Infer<RegisterFormSchema>> } } = $props();
 
-    // 2. Initialize the form
+    // svelte-ignore state_referenced_locally
     const form = superForm(data.form, {
         validators: zod4Client(registerSchema),
     });
