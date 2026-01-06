@@ -38,6 +38,7 @@
                     {...props}
                     bind:value={$formData.password}
                     type="password"
+                    autocomplete="off"
                 />
             {/snippet}
         </Form.Control>

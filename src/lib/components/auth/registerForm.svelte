@@ -26,7 +26,11 @@
         <Form.Control>
             {#snippet children({ props })}
                 <Form.Label>Name</Form.Label>
-                <Input {...props} bind:value={$formData.name} />
+                <Input
+                    {...props}
+                    bind:value={$formData.name}
+                    autocomplete="off"
+                />
             {/snippet}
         </Form.Control>
         <Form.FieldErrors />
@@ -50,6 +54,7 @@
                     {...props}
                     bind:value={$formData.password}
                     type="password"
+                    autocomplete="off"
                 />
             {/snippet}
         </Form.Control>
@@ -64,6 +69,7 @@
                     {...props}
                     bind:value={$formData.passwordConfirm}
                     type="password"
+                    autocomplete="off"
                 />
             {/snippet}
         </Form.Control>
